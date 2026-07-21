@@ -495,8 +495,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add reports/ logs/
+          git add -f reports/ logs/
           git diff --quiet && git diff --staged --quiet || git commit -m "daily: $(date +%Y-%m-%d) stock analysis"
           git push
+
 
 
