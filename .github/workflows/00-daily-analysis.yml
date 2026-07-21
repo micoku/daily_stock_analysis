@@ -40,6 +40,9 @@ jobs:
       
       - name: 检出代码
         uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       
       - name: 设置 Python 环境
         uses: actions/setup-python@v6
@@ -487,3 +490,13 @@ jobs:
             echo "📜 最近日志（最后 30 行）:"
             tail -30 logs/stock_analysis_*.log 2>/dev/null || echo "无日志"
           fi
+      - name: 提交分析结果到仓库
+        if: always()
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add reports/ logs/
+          git diff --quiet && git diff --staged --quiet || git commit -m "daily: $(date +%Y-%m-%d) stock analysis"
+          git push
+
+
