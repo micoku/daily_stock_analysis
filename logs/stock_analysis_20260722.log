@@ -1,0 +1,202 @@
+2026-07-22 20:09:20 | INFO     | src/logging_config.py:188 | 日志系统初始化完成，日志目录: logs
+2026-07-22 20:09:20 | INFO     | src/logging_config.py:189 | 常规日志: logs/stock_analysis_20260722.log
+2026-07-22 20:09:20 | INFO     | src/logging_config.py:190 | 调试日志: logs/stock_analysis_debug_20260722.log
+2026-07-22 20:09:20 | INFO     | main.py:791 | ============================================================
+2026-07-22 20:09:20 | INFO     | main.py:792 | A股自选股智能分析系统 启动
+2026-07-22 20:09:20 | INFO     | main.py:793 | 运行时间: 2026-07-22 20:09:20
+2026-07-22 20:09:20 | INFO     | main.py:794 | ============================================================
+2026-07-22 20:09:20 | WARNING  | main.py:799 | 未配置 Tushare Token，将使用其他数据源
+2026-07-22 20:09:24 | INFO     | src/storage.py:848 | 数据库初始化完成: sqlite:////home/runner/work/daily_stock_analysis/daily_stock_analysis/data/stock_analysis.db
+2026-07-22 20:09:24 | INFO     | data_provider/base.py:1118 | 已初始化 5 个数据源（按优先级）: EfinanceFetcher(P0), AkshareFetcher(P1), PytdxFetcher(P2), BaostockFetcher(P3), YfinanceFetcher(P4)
+2026-07-22 20:09:24 | INFO     | src/analyzer.py:2097 | Analyzer LLM: litellm initialized (model=deepseek/deepseek-chat)
+2026-07-22 20:09:24 | INFO     | src/notification.py:249 | 已配置 1 个通知渠道：飞书
+2026-07-22 20:09:24 | INFO     | src/search_service.py:2229 | 已配置 SerpAPI 搜索，共 1 个 API Key
+2026-07-22 20:09:24 | INFO     | src/search_service.py:2246 | 已启用 SearXNG 公共实例自动发现模式
+2026-07-22 20:09:24 | INFO     | src/search_service.py:2262 | 新闻时效策略已启用: profile=short, profile_days=3, NEWS_MAX_AGE_DAYS=3, effective_window=3
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:147 | 调度器初始化完成，最大并发数: 1
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:148 | 已启用技术分析引擎（均线/趋势/量价指标）
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:151 | 实时行情已启用 (优先级: tencent,akshare_sina,efinance,akshare_em)
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:157 | 筹码分布分析已禁用
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:161 | 搜索服务已启用
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:1998 | ===== 开始分析 1 只股票 =====
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:1999 | 股票列表: 600362
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:2000 | 并发数: 1, 模式: 完整分析
+2026-07-22 20:09:24 | INFO     | src/core/pipeline.py:1896 | ========== 开始处理 600362 ==========
+2026-07-22 20:09:25 | INFO     | src/core/pipeline.py:242 | 江西铜业(600362) 开始从数据源获取数据...
+2026-07-22 20:09:25 | INFO     | data_provider/base.py:1280 | [数据源尝试 1/5] [EfinanceFetcher] 获取 600362...
+2026-07-22 20:09:25 | INFO     | data_provider/base.py:444 | [EfinanceFetcher] 开始获取 600362 日线数据: 范围=2026-05-23 ~ 2026-07-22
+2026-07-22 20:09:28 | INFO     | data_provider/efinance_fetcher.py:394 | [API调用] ef.stock.get_quote_history(stock_codes=600362, beg=20260523, end=20260722, klt=101, fqt=1)
+2026-07-22 20:09:29 | INFO     | data_provider/efinance_fetcher.py:416 | [API返回] Eastmoney 历史K线成功: endpoint=push2his.eastmoney.com/api/qt/stock/kline/get, stock_code=600362, range=20260523~20260722, rows=42, elapsed=1.80s
+2026-07-22 20:09:29 | INFO     | data_provider/efinance_fetcher.py:421 | [API返回] 列名: ['股票名称', '股票代码', '日期', '开盘', '收盘', '最高', '最低', '成交量', '成交额', '振幅', '涨跌幅', '涨跌额', '换手率']
+2026-07-22 20:09:29 | INFO     | data_provider/efinance_fetcher.py:423 | [API返回] 日期范围: 2026-05-25 ~ 2026-07-22
+2026-07-22 20:09:29 | INFO     | data_provider/base.py:463 | [EfinanceFetcher] 600362 获取成功: 范围=2026-05-23 ~ 2026-07-22, rows=42, elapsed=4.81s
+2026-07-22 20:09:29 | INFO     | data_provider/base.py:1301 | [数据源完成] 600362 使用 [EfinanceFetcher] 获取成功: rows=42, elapsed=4.81s
+2026-07-22 20:09:29 | INFO     | src/storage.py:1809 | 保存 600362 数据成功，新增 42 条
+2026-07-22 20:09:29 | INFO     | src/core/pipeline.py:250 | 江西铜业(600362) 数据保存成功（来源: EfinanceFetcher，新增 42 条）
+2026-07-22 20:09:29 | INFO     | data_provider/akshare_fetcher.py:1149 | [API调用] 腾讯财经接口获取 600362 实时行情: endpoint=qt.gtimg.cn/q, symbol=sh600362
+2026-07-22 20:09:34 | INFO     | data_provider/akshare_fetcher.py:1256 | [实时行情-腾讯] 600362 江西铜业: endpoint=qt.gtimg.cn/q, 价格=43.05, 涨跌=5.51%, 量比=1.81, 换手率=4.75%, elapsed=5.10s
+2026-07-22 20:09:34 | INFO     | data_provider/base.py:1573 | [实时行情] 600362 成功获取 (来源: tencent)
+2026-07-22 20:09:34 | INFO     | src/core/pipeline.py:313 | 江西铜业(600362) 实时行情: 价格=43.05, 量比=1.81, 换手率=4.75% (来源: tencent)
+2026-07-22 20:09:34 | INFO     | data_provider/akshare_fetcher.py:1149 | [API调用] 腾讯财经接口获取 600362 实时行情: endpoint=qt.gtimg.cn/q, symbol=sh600362
+2026-07-22 20:09:41 | INFO     | data_provider/akshare_fetcher.py:1256 | [实时行情-腾讯] 600362 江西铜业: endpoint=qt.gtimg.cn/q, 价格=43.05, 涨跌=5.51%, 量比=1.81, 换手率=4.75%, elapsed=6.50s
+2026-07-22 20:09:41 | INFO     | data_provider/base.py:1573 | [实时行情] 600362 成功获取 (来源: tencent)
+2026-07-22 20:09:44 | INFO     | data_provider/efinance_fetcher.py:1114 | [API调用] ef.stock.get_belong_board(stock_code=600362) 获取所属板块...
+2026-07-22 20:09:46 | INFO     | data_provider/efinance_fetcher.py:1123 | [API返回] ef.stock.get_belong_board 成功: 返回 28 个板块, 耗时 1.87s
+2026-07-22 20:09:46 | INFO     | data_provider/base.py:1909 | [EfinanceFetcher] 获取所属板块成功: 600362, count=28
+2026-07-22 20:09:46 | INFO     | src/core/pipeline.py:407 | 江西铜业(600362) 趋势分析: 空头排列, 买入信号=强烈卖出, 评分=15
+2026-07-22 20:09:46 | INFO     | src/core/pipeline.py:432 | 江西铜业(600362) 开始多维度情报搜索...
+2026-07-22 20:09:46 | INFO     | src/search_service.py:3553 | 开始多维度情报搜索: 江西铜业(600362), 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3), 目标条数=3, provider请求条数=6
+2026-07-22 20:09:46 | INFO     | src/search_service.py:3582 | [情报搜索] 最新消息: 使用 SerpAPI
+2026-07-22 20:09:50 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '江西铜业 600362 最新 新闻 重大 事件' 成功，返回 6 条结果，耗时 4.00s
+2026-07-22 20:09:50 | INFO     | src/search_service.py:3067 | [新闻过滤] 600362:SerpAPI:latest_news: provider=SerpAPI, total=6, kept=0, drop_unknown=0, drop_old=6, drop_future=0, window=[2026-07-20,2026-07-23]
+2026-07-22 20:09:50 | INFO     | src/search_service.py:3621 | [情报搜索] 最新消息: 原始=6条, 过滤后=0条
+2026-07-22 20:09:50 | INFO     | src/search_service.py:3582 | [情报搜索] 机构分析: 使用 SearXNG
+2026-07-22 20:09:52 | INFO     | src/search_service.py:1852 | [SearXNG] 已刷新公共实例池，共 20 个候选实例
+2026-07-22 20:09:52 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://search.rhscz.eu 搜索失败: Too Many Requests
+2026-07-22 20:09:53 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.tiekoetter.com 搜索失败: Too Many Requests
+2026-07-22 20:09:54 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searxng.deggo.fyi 搜索失败: HTTP 418
+2026-07-22 20:09:54 | WARNING  | src/search_service.py:3628 | [情报搜索] 机构分析: 搜索失败 - https://search.rhscz.eu: Too Many Requests；https://searx.tiekoetter.com: Too Many Requests；https://searxng.deggo.fyi: HTTP 418
+2026-07-22 20:09:54 | INFO     | src/search_service.py:3582 | [情报搜索] 风险排查: 使用 SerpAPI
+2026-07-22 20:09:59 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '江西铜业 减持 处罚 违规 诉讼 利空 风险' 成功，返回 6 条结果，耗时 4.91s
+2026-07-22 20:09:59 | INFO     | src/search_service.py:3067 | [新闻过滤] 600362:SerpAPI:risk_check: provider=SerpAPI, total=6, kept=5, drop_unknown=0, drop_old=1, drop_future=0, window=[2026-07-20,2026-07-23]
+2026-07-22 20:09:59 | INFO     | src/search_service.py:2804 | [新闻相关度] 600362:SerpAPI:risk_check:rank: direct=0, sector=3, macro=0, top_score=0, top_category=sector_related_news, reasons=未命中股票代码或公司全称，降级为背景新闻
+2026-07-22 20:09:59 | INFO     | src/search_service.py:3621 | [情报搜索] 风险排查: 原始=6条, 过滤后=3条
+2026-07-22 20:10:00 | INFO     | src/search_service.py:3582 | [情报搜索] 公司公告: 使用 SearXNG
+2026-07-22 20:10:00 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.tiekoetter.com 搜索失败: Too Many Requests
+2026-07-22 20:10:01 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searxng.deggo.fyi 搜索失败: HTTP 418
+2026-07-22 20:10:01 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.linxx.net 搜索失败: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-07-22 20:10:01 | WARNING  | src/search_service.py:3628 | [情报搜索] 公司公告: 搜索失败 - https://searx.tiekoetter.com: Too Many Requests；https://searxng.deggo.fyi: HTTP 418；https://searx.linxx.net: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-07-22 20:10:02 | INFO     | src/search_service.py:3582 | [情报搜索] 业绩预期: 使用 SerpAPI
+2026-07-22 20:10:09 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '江西铜业 业绩预告 财报 营收 净利润 同比增长' 成功，返回 6 条结果，耗时 7.73s
+2026-07-22 20:10:09 | INFO     | src/search_service.py:2804 | [新闻相关度] 600362:SerpAPI:earnings:rank: direct=0, sector=2, macro=1, top_score=6, top_category=sector_related_news, reasons=仅命中行业或板块背景
+2026-07-22 20:10:09 | INFO     | src/search_service.py:3621 | [情报搜索] 业绩预期: 原始=6条, 过滤后=3条
+2026-07-22 20:10:10 | INFO     | src/core/pipeline.py:448 | 江西铜业(600362) 情报搜索完成: 共 6 条结果
+2026-07-22 20:10:10 | INFO     | src/storage.py:1203 | 保存新闻情报成功: 600362, 新增 3 条
+2026-07-22 20:10:10 | INFO     | src/storage.py:1203 | 保存新闻情报成功: 600362, 新增 3 条
+2026-07-22 20:10:10 | INFO     | src/agent/skills/base.py:360 | Loaded 15 built-in skills from /home/runner/work/daily_stock_analysis/daily_stock_analysis/strategies
+2026-07-22 20:10:10 | INFO     | src/agent/factory.py:236 | [AgentFactory] SkillManager prototype cached (15 skills)
+2026-07-22 20:10:10 | INFO     | src/agent/skills/base.py:431 | Activated skills: ['bull_trend']
+2026-07-22 20:10:10 | INFO     | src/agent/factory.py:280 | [AgentFactory] Activated skills: ['bull_trend']
+2026-07-22 20:10:13 | INFO     | src/analyzer.py:2583 | ========== AI 分析 江西铜业(600362) ==========
+2026-07-22 20:10:13 | INFO     | src/analyzer.py:2584 | [LLM配置] 模型: deepseek/deepseek-chat
+2026-07-22 20:10:13 | INFO     | src/analyzer.py:2585 | [LLM配置] Prompt 长度: 4949 字符
+2026-07-22 20:10:13 | INFO     | src/analyzer.py:2586 | [LLM配置] 是否包含新闻: 是
+2026-07-22 20:10:13 | INFO     | src/analyzer.py:2590 | [LLM Prompt 预览]
+# 决策仪表盘分析请求
+
+## 📊 股票基础信息
+| 项目 | 数据 |
+|------|------|
+| 股票代码 | **600362** |
+| 股票名称 | **江西铜业** |
+| 分析日期 | 2026-07-23 |
+
+---
+
+## 市场阶段上下文
+- 当前市场阶段：盘前
+- 市场：cn
+- 市场本地时间：2026-07-23T04:09:24.869865+08:00
+- 最新可复用完整日线日期：2026-07-22
+- 距常规开盘约 320 分钟。
+- 阶段约束：当前尚未开盘，不得描述“今日走势已经发生”；只能基于上一完整交易日（2026-07-22）和盘前信息生成开盘计划、观察价位与风险预案。
+
+
+## 📈 技术面数据
+
+### 今日行情
+| 指标 | 数值 |
+|------|------|
+| 收盘价 | {today.get('close', 'N/A')} 元 |
+| 开盘价 | {today.get('open', 'N/A')} 元 |
+| 最高价 | {today.get('high', 'N/A')} 元 |
+| 最低价 | {today.get...
+2026-07-22 20:10:13 | INFO     | src/analyzer.py:2599 | [LLM调用] 开始调用 deepseek/deepseek-chat...
+2026-07-22 20:10:30 | INFO     | src/analyzer.py:2633 | [LLM返回] deepseek/deepseek-chat 响应成功, 耗时 16.68s, 响应长度 4148 字符
+2026-07-22 20:10:30 | INFO     | src/analyzer.py:2637 | [LLM返回 预览]
+{
+    "stock_name": "江西铜业（600362）",
+    "sentiment_score": 15,
+    "trend_prediction": "强烈看空",
+    "operation_advice": "卖出",
+    "decision_type": "sell",
+    "confidence_level": "中",
+
+    "dashboard": {
+        "core_conclusion": {
+            "one_sentence": "技术面空头排列且乖离率超标，建议持仓者减仓、空仓者观望。",
+        ...
+2026-07-22 20:10:30 | INFO     | src/analyzer.py:2688 | [LLM解析] 江西铜业(600362) 分析完成: 强烈看空, 评分 15
+2026-07-22 20:10:30 | INFO     | src/core/pipeline.py:1935 | [600362] 分析完成: 卖出, 评分 15
+2026-07-22 20:10:30 | INFO     | src/core/pipeline.py:2107 | ===== 分析完成 =====
+2026-07-22 20:10:30 | INFO     | src/core/pipeline.py:2108 | 成功: 1, 失败: 0, 耗时: 65.32 秒
+2026-07-22 20:10:30 | INFO     | src/notification.py:2322 | 日报已保存到: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/report_20260722.md
+2026-07-22 20:10:30 | INFO     | src/core/pipeline.py:2233 | 决策仪表盘日报已保存: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/report_20260722.md
+2026-07-22 20:10:30 | INFO     | src/core/pipeline.py:2255 | 生成决策仪表盘日报...
+2026-07-22 20:10:31 | INFO     | src/notification_sender/feishu_sender.py:215 | 飞书消息发送成功
+2026-07-22 20:10:31 | INFO     | src/core/pipeline.py:2682 | 决策仪表盘推送成功
+2026-07-22 20:10:31 | INFO     | src/core/market_review.py:102 | 开始执行大盘复盘分析...
+2026-07-22 20:10:31 | INFO     | data_provider/base.py:1118 | 已初始化 5 个数据源（按优先级）: EfinanceFetcher(P0), AkshareFetcher(P1), PytdxFetcher(P2), BaostockFetcher(P3), YfinanceFetcher(P4)
+2026-07-22 20:10:31 | INFO     | src/market_analyzer.py:1239 | ========== 开始大盘复盘分析 ==========
+2026-07-22 20:10:31 | INFO     | src/market_analyzer.py:330 | [大盘] 获取主要指数实时行情...
+2026-07-22 20:10:33 | INFO     | data_provider/efinance_fetcher.py:826 | [API调用] ef.stock.get_realtime_quotes(['沪深系列指数']) 获取指数行情...
+2026-07-22 20:10:36 | INFO     | data_provider/efinance_fetcher.py:836 | [API返回] 指数行情成功: 1085 条, 耗时 2.59s
+2026-07-22 20:10:36 | INFO     | data_provider/efinance_fetcher.py:884 | [efinance] 获取到 5 个指数行情
+2026-07-22 20:10:36 | INFO     | data_provider/base.py:2024 | [EfinanceFetcher] 获取指数行情成功
+2026-07-22 20:10:36 | INFO     | src/market_analyzer.py:356 | [大盘] 获取到 5 个指数行情
+2026-07-22 20:10:36 | INFO     | src/market_analyzer.py:366 | [大盘] 获取市场涨跌统计...
+2026-07-22 20:10:38 | INFO     | data_provider/efinance_fetcher.py:907 | [API调用] ef.stock.get_realtime_quotes() 获取市场统计...
+2026-07-22 20:10:43 | INFO     | data_provider/base.py:2047 | [EfinanceFetcher] 获取市场统计成功
+2026-07-22 20:10:43 | INFO     | src/market_analyzer.py:378 | [大盘] 涨:1530 跌:3876 平:122 涨停:47 跌停:9 成交额:26686亿
+2026-07-22 20:10:43 | INFO     | src/market_analyzer.py:388 | [大盘] 获取板块涨跌榜...
+2026-07-22 20:10:45 | INFO     | data_provider/efinance_fetcher.py:1020 | [API调用] ef.stock.get_realtime_quotes(['行业板块']) 获取板块行情...
+2026-07-22 20:10:46 | INFO     | data_provider/base.py:3026 | [EfinanceFetcher] 获取板块排行成功
+2026-07-22 20:10:46 | INFO     | src/market_analyzer.py:396 | [大盘] 领涨板块: ['白银', '贵金属', '黄金', '钾肥', '医美耗材']
+2026-07-22 20:10:46 | INFO     | src/market_analyzer.py:397 | [大盘] 领跌板块: ['文字媒体', '通信线缆及配套', '其他数字媒体', '鞋帽及其他', '玻纤制造']
+2026-07-22 20:10:46 | INFO     | src/market_analyzer.py:440 | [大盘] 开始搜索市场新闻...
+2026-07-22 20:10:46 | INFO     | src/search_service.py:3192 | 搜索股票新闻: 大盘(market), query='A股 大盘 复盘', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-07-22 20:10:57 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 'A股 大盘 复盘' 成功，返回 6 条结果，耗时 11.17s
+2026-07-22 20:10:57 | INFO     | src/search_service.py:3067 | [新闻过滤] market:SerpAPI:stock_news: provider=SerpAPI, total=6, kept=5, drop_unknown=0, drop_old=1, drop_future=0, window=[2026-07-20,2026-07-23]
+2026-07-22 20:10:57 | INFO     | src/search_service.py:2804 | [新闻相关度] market:SerpAPI:stock_news: direct=2, sector=2, macro=1, top_score=40, top_category=direct_company_news, reasons=摘要命中公司名 大盘；命中公告/财报/交易等公司事件词
+2026-07-22 20:10:57 | INFO     | src/search_service.py:3294 | SerpAPI 搜索成功，识别到 2 条直接个股新闻，优先返回
+2026-07-22 20:10:57 | INFO     | src/market_analyzer.py:454 | [大盘] 搜索 'A股 大盘 复盘' 获取 3 条结果
+2026-07-22 20:10:57 | INFO     | src/search_service.py:3192 | 搜索股票新闻: 大盘(market), query='股市 行情 分析', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-07-22 20:10:59 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '股市 行情 分析' 成功，返回 6 条结果，耗时 1.72s
+2026-07-22 20:10:59 | INFO     | src/search_service.py:3067 | [新闻过滤] market:SerpAPI:stock_news: provider=SerpAPI, total=6, kept=3, drop_unknown=0, drop_old=3, drop_future=0, window=[2026-07-20,2026-07-23]
+2026-07-22 20:10:59 | INFO     | src/search_service.py:2804 | [新闻相关度] market:SerpAPI:stock_news: direct=0, sector=0, macro=3, top_score=0, top_category=macro_market_news, reasons=未命中目标公司身份，归为宏观/市场新闻
+2026-07-22 20:10:59 | INFO     | src/search_service.py:3311 | SerpAPI 搜索成功，中文结果已满足目标条数但缺少直接个股命中，继续尝试下一引擎
+2026-07-22 20:10:59 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searxng.deggo.fyi 搜索失败: HTTP 418
+2026-07-22 20:11:00 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.linxx.net 搜索失败: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-07-22 20:11:00 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://etsi.me 搜索失败: Too Many Requests
+2026-07-22 20:11:00 | WARNING  | src/search_service.py:3336 | SearXNG 搜索失败: https://searxng.deggo.fyi: HTTP 418；https://searx.linxx.net: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问；https://etsi.me: Too Many Requests，尝试下一个引擎
+2026-07-22 20:11:00 | INFO     | src/market_analyzer.py:454 | [大盘] 搜索 '股市 行情 分析' 获取 3 条结果
+2026-07-22 20:11:00 | INFO     | src/search_service.py:3192 | 搜索股票新闻: 大盘(market), query='A股 市场 热点 板块', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-07-22 20:11:04 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 'A股 市场 热点 板块' 成功，返回 6 条结果，耗时 3.58s
+2026-07-22 20:11:04 | INFO     | src/search_service.py:3067 | [新闻过滤] market:SerpAPI:stock_news: provider=SerpAPI, total=6, kept=2, drop_unknown=3, drop_old=1, drop_future=0, window=[2026-07-20,2026-07-23]
+2026-07-22 20:11:04 | INFO     | src/search_service.py:2804 | [新闻相关度] market:SerpAPI:stock_news: direct=0, sector=1, macro=1, top_score=6, top_category=sector_related_news, reasons=仅命中行业或板块背景
+2026-07-22 20:11:04 | INFO     | src/search_service.py:3318 | SerpAPI 搜索成功，识别到 2/2 条中文新闻但缺少直接个股命中，继续尝试下一引擎
+2026-07-22 20:11:04 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.linxx.net 搜索失败: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-07-22 20:11:05 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://etsi.me 搜索失败: Too Many Requests
+2026-07-22 20:11:05 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.rhscz.eu 搜索失败: Too Many Requests
+2026-07-22 20:11:05 | WARNING  | src/search_service.py:3336 | SearXNG 搜索失败: https://searx.linxx.net: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问；https://etsi.me: Too Many Requests；https://searx.rhscz.eu: Too Many Requests，尝试下一个引擎
+2026-07-22 20:11:05 | INFO     | src/market_analyzer.py:454 | [大盘] 搜索 'A股 市场 热点 板块' 获取 2 条结果
+2026-07-22 20:11:05 | INFO     | src/market_analyzer.py:456 | [大盘] 共获取 8 条市场新闻
+2026-07-22 20:11:05 | INFO     | src/market_analyzer.py:481 | [大盘] 调用大模型生成复盘报告...
+2026-07-22 20:11:19 | INFO     | src/market_analyzer.py:486 | [大盘] 复盘报告生成成功，长度: 1466 字符
+2026-07-22 20:11:19 | INFO     | src/market_analyzer.py:1251 | ========== 大盘复盘分析完成 ==========
+2026-07-22 20:11:19 | INFO     | src/notification.py:2322 | 日报已保存到: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/market_review_20260722.md
+2026-07-22 20:11:19 | INFO     | src/core/market_review.py:153 | 大盘复盘报告已保存: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/market_review_20260722.md
+2026-07-22 20:11:19 | INFO     | src/core/market_review.py:242 | 大盘复盘历史记录已保存: query_id=market_review_e59e8439afc14d4f8a9328f5161288f0
+2026-07-22 20:11:19 | INFO     | src/notification.py:2197 | 正在向 1 个渠道发送通知：飞书
+2026-07-22 20:11:19 | INFO     | src/notification_sender/feishu_sender.py:215 | 飞书消息发送成功
+2026-07-22 20:11:19 | INFO     | src/notification.py:2244 | 通知发送完成：成功 1 个，失败 0 个
+2026-07-22 20:11:19 | INFO     | src/core/market_review.py:173 | 大盘复盘推送成功
+2026-07-22 20:11:19 | INFO     | main.py:571 | 
+===== 分析结果摘要 =====
+2026-07-22 20:11:19 | INFO     | main.py:574 | 🔴 江西铜业(600362): 卖出 | 评分 15 | 强烈看空
+2026-07-22 20:11:19 | INFO     | main.py:579 | 
+任务执行完成
+2026-07-22 20:11:22 | INFO     | main.py:628 | 开始自动回测...
+2026-07-22 20:11:22 | INFO     | main.py:636 | 自动回测完成: processed=0 saved=0 completed=0 insufficient=0 errors=0
+2026-07-22 20:11:22 | INFO     | main.py:973 | 
+程序执行完成
