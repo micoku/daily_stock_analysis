@@ -1,0 +1,243 @@
+2026-08-05 20:22:13 | INFO     | src/logging_config.py:188 | 日志系统初始化完成，日志目录: logs
+2026-08-05 20:22:13 | INFO     | src/logging_config.py:189 | 常规日志: logs/stock_analysis_20260805.log
+2026-08-05 20:22:13 | INFO     | src/logging_config.py:190 | 调试日志: logs/stock_analysis_debug_20260805.log
+2026-08-05 20:22:13 | INFO     | main.py:791 | ============================================================
+2026-08-05 20:22:13 | INFO     | main.py:792 | A股自选股智能分析系统 启动
+2026-08-05 20:22:13 | INFO     | main.py:793 | 运行时间: 2026-08-05 20:22:13
+2026-08-05 20:22:13 | INFO     | main.py:794 | ============================================================
+2026-08-05 20:22:13 | WARNING  | main.py:799 | 未配置 Tushare Token，将使用其他数据源
+2026-08-05 20:22:18 | INFO     | src/storage.py:848 | 数据库初始化完成: sqlite:////home/runner/work/daily_stock_analysis/daily_stock_analysis/data/stock_analysis.db
+2026-08-05 20:22:18 | INFO     | data_provider/base.py:1118 | 已初始化 5 个数据源（按优先级）: EfinanceFetcher(P0), AkshareFetcher(P1), PytdxFetcher(P2), BaostockFetcher(P3), YfinanceFetcher(P4)
+2026-08-05 20:22:18 | INFO     | src/analyzer.py:2097 | Analyzer LLM: litellm initialized (model=deepseek/deepseek-chat)
+2026-08-05 20:22:18 | INFO     | src/notification.py:249 | 已配置 1 个通知渠道：飞书
+2026-08-05 20:22:18 | INFO     | src/search_service.py:2229 | 已配置 SerpAPI 搜索，共 1 个 API Key
+2026-08-05 20:22:18 | INFO     | src/search_service.py:2246 | 已启用 SearXNG 公共实例自动发现模式
+2026-08-05 20:22:18 | INFO     | src/search_service.py:2262 | 新闻时效策略已启用: profile=short, profile_days=3, NEWS_MAX_AGE_DAYS=3, effective_window=3
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:147 | 调度器初始化完成，最大并发数: 1
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:148 | 已启用技术分析引擎（均线/趋势/量价指标）
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:151 | 实时行情已启用 (优先级: tencent,akshare_sina,efinance,akshare_em)
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:157 | 筹码分布分析已禁用
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:161 | 搜索服务已启用
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:1998 | ===== 开始分析 1 只股票 =====
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:1999 | 股票列表: 600362
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:2000 | 并发数: 1, 模式: 完整分析
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:1896 | ========== 开始处理 600362 ==========
+2026-08-05 20:22:18 | INFO     | src/core/pipeline.py:242 | 江西铜业(600362) 开始从数据源获取数据...
+2026-08-05 20:22:18 | INFO     | data_provider/base.py:1280 | [数据源尝试 1/5] [EfinanceFetcher] 获取 600362...
+2026-08-05 20:22:18 | INFO     | data_provider/base.py:444 | [EfinanceFetcher] 开始获取 600362 日线数据: 范围=2026-06-06 ~ 2026-08-05
+2026-08-05 20:22:21 | INFO     | data_provider/efinance_fetcher.py:394 | [API调用] ef.stock.get_quote_history(stock_codes=600362, beg=20260606, end=20260805, klt=101, fqt=1)
+2026-08-05 20:22:23 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:869 | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1
+2026-08-05 20:22:23 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:869 | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1
+2026-08-05 20:22:24 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:869 | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1
+2026-08-05 20:22:24 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:869 | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1
+2026-08-05 20:22:25 | WARNING  | /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:869 | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1
+2026-08-05 20:22:26 | ERROR    | data_provider/efinance_fetcher.py:448 | Eastmoney 历史K线接口失败: endpoint=push2his.eastmoney.com/api/qt/stock/kline/get, stock_code=600362, market_type=stock, range=20260606~20260805, category=remote_disconnect, error_type=ConnectionError, elapsed=5.02s, detail=HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2026-08-05 20:22:26 | ERROR    | data_provider/base.py:472 | [EfinanceFetcher] 600362 获取失败: 范围=2026-06-06 ~ 2026-08-05, error_type=ProtocolError, elapsed=7.37s, reason=efinance 获取数据失败: Eastmoney 历史K线接口失败: endpoint=push2his.eastmoney.com/api/qt/stock/kline/get, stock_code=600362, market_type=stock, range=20260606~20260805, category=remote_disconnect, error_type=ConnectionError, elapsed=5.02s, detail=HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2026-08-05 20:22:26 | WARNING  | data_provider/base.py:1333 | [数据源失败 1/5] [EfinanceFetcher] 600362: error_type=ProtocolError, reason=[EfinanceFetcher] 600362: efinance 获取数据失败: Eastmoney 历史K线接口失败: endpoint=push2his.eastmoney.com/api/qt/stock/kline/get, stock_code=600362, market_type=stock, range=20260606~20260805, category=remote_disconnect, error_type=ConnectionError, elapsed=5.02s, detail=HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&beg=20260606&end=20260805&rtntype=6&secid=1.600362&klt=101&fqt=1 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2026-08-05 20:22:26 | INFO     | data_provider/base.py:1340 | [数据源切换] 600362: [EfinanceFetcher] -> [AkshareFetcher]
+2026-08-05 20:22:26 | INFO     | data_provider/base.py:1280 | [数据源尝试 2/5] [AkshareFetcher] 获取 600362...
+2026-08-05 20:22:26 | INFO     | data_provider/base.py:444 | [AkshareFetcher] 开始获取 600362 日线数据: 范围=2026-06-06 ~ 2026-08-05
+2026-08-05 20:22:26 | INFO     | data_provider/akshare_fetcher.py:429 | [数据源] 尝试使用 东方财富 获取 600362...
+2026-08-05 20:22:30 | INFO     | data_provider/akshare_fetcher.py:456 | [API调用] ak.stock_zh_a_hist(symbol=600362, ...)
+2026-08-05 20:22:31 | WARNING  | data_provider/akshare_fetcher.py:437 | [数据源] 东方财富 获取失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-08-05 20:22:31 | INFO     | data_provider/akshare_fetcher.py:429 | [数据源] 尝试使用 新浪财经 获取 600362...
+2026-08-05 20:22:41 | INFO     | data_provider/akshare_fetcher.py:433 | [数据源] 新浪财经 获取成功
+2026-08-05 20:22:41 | INFO     | data_provider/base.py:463 | [AkshareFetcher] 600362 获取成功: 范围=2026-06-06 ~ 2026-08-05, rows=42, elapsed=15.00s
+2026-08-05 20:22:41 | INFO     | data_provider/base.py:1301 | [数据源完成] 600362 使用 [AkshareFetcher] 获取成功: rows=42, elapsed=22.37s
+2026-08-05 20:22:41 | INFO     | src/storage.py:1809 | 保存 600362 数据成功，新增 42 条
+2026-08-05 20:22:41 | INFO     | src/core/pipeline.py:250 | 江西铜业(600362) 数据保存成功（来源: AkshareFetcher，新增 42 条）
+2026-08-05 20:22:41 | INFO     | data_provider/akshare_fetcher.py:1149 | [API调用] 腾讯财经接口获取 600362 实时行情: endpoint=qt.gtimg.cn/q, symbol=sh600362
+2026-08-05 20:22:45 | INFO     | data_provider/akshare_fetcher.py:1256 | [实时行情-腾讯] 600362 江西铜业: endpoint=qt.gtimg.cn/q, 价格=46.63, 涨跌=5.98%, 量比=1.85, 换手率=4.15%, elapsed=4.77s
+2026-08-05 20:22:45 | INFO     | data_provider/base.py:1573 | [实时行情] 600362 成功获取 (来源: tencent)
+2026-08-05 20:22:45 | INFO     | src/core/pipeline.py:313 | 江西铜业(600362) 实时行情: 价格=46.63, 量比=1.85, 换手率=4.15% (来源: tencent)
+2026-08-05 20:22:45 | INFO     | data_provider/akshare_fetcher.py:1149 | [API调用] 腾讯财经接口获取 600362 实时行情: endpoint=qt.gtimg.cn/q, symbol=sh600362
+2026-08-05 20:22:51 | INFO     | data_provider/akshare_fetcher.py:1256 | [实时行情-腾讯] 600362 江西铜业: endpoint=qt.gtimg.cn/q, 价格=46.63, 涨跌=5.98%, 量比=1.85, 换手率=4.15%, elapsed=5.42s
+2026-08-05 20:22:51 | INFO     | data_provider/base.py:1573 | [实时行情] 600362 成功获取 (来源: tencent)
+2026-08-05 20:22:55 | INFO     | data_provider/efinance_fetcher.py:1114 | [API调用] ef.stock.get_belong_board(stock_code=600362) 获取所属板块...
+2026-08-05 20:22:58 | INFO     | data_provider/efinance_fetcher.py:1123 | [API返回] ef.stock.get_belong_board 成功: 返回 29 个板块, 耗时 2.10s
+2026-08-05 20:22:58 | INFO     | data_provider/base.py:1909 | [EfinanceFetcher] 获取所属板块成功: 600362, count=29
+2026-08-05 20:22:58 | INFO     | src/core/pipeline.py:407 | 江西铜业(600362) 趋势分析: 强势多头, 买入信号=买入, 评分=60
+2026-08-05 20:22:58 | INFO     | src/core/pipeline.py:432 | 江西铜业(600362) 开始多维度情报搜索...
+2026-08-05 20:22:58 | INFO     | src/search_service.py:3553 | 开始多维度情报搜索: 江西铜业(600362), 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3), 目标条数=3, provider请求条数=6
+2026-08-05 20:22:58 | INFO     | src/search_service.py:3582 | [情报搜索] 最新消息: 使用 SerpAPI
+2026-08-05 20:23:01 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '江西铜业 600362 最新 新闻 重大 事件' 成功，返回 6 条结果，耗时 3.29s
+2026-08-05 20:23:01 | INFO     | src/search_service.py:3067 | [新闻过滤] 600362:SerpAPI:latest_news: provider=SerpAPI, total=6, kept=3, drop_unknown=0, drop_old=3, drop_future=0, window=[2026-08-03,2026-08-06]
+2026-08-05 20:23:01 | INFO     | src/search_service.py:2804 | [新闻相关度] 600362:SerpAPI:latest_news:rank: direct=1, sector=2, macro=0, top_score=62, top_category=direct_company_news, reasons=摘要命中股票代码 600362；摘要命中公司名 江西铜业
+2026-08-05 20:23:01 | INFO     | src/search_service.py:3621 | [情报搜索] 最新消息: 原始=6条, 过滤后=3条
+2026-08-05 20:23:01 | INFO     | src/search_service.py:3582 | [情报搜索] 机构分析: 使用 SearXNG
+2026-08-05 20:23:03 | INFO     | src/search_service.py:1852 | [SearXNG] 已刷新公共实例池，共 20 个候选实例
+2026-08-05 20:23:03 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://search.rhscz.eu 搜索失败: Too Many Requests
+2026-08-05 20:23:04 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.rhscz.eu 搜索失败: Too Many Requests
+2026-08-05 20:23:04 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searxng.site 搜索失败: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Ap；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-08-05 20:23:04 | WARNING  | src/search_service.py:3628 | [情报搜索] 机构分析: 搜索失败 - https://search.rhscz.eu: Too Many Requests；https://searx.rhscz.eu: Too Many Requests；https://searxng.site: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Ap；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-08-05 20:23:05 | INFO     | src/search_service.py:3582 | [情报搜索] 风险排查: 使用 SerpAPI
+2026-08-05 20:23:14 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '江西铜业 减持 处罚 违规 诉讼 利空 风险' 成功，返回 6 条结果，耗时 9.10s
+2026-08-05 20:23:14 | INFO     | src/search_service.py:3067 | [新闻过滤] 600362:SerpAPI:risk_check: provider=SerpAPI, total=6, kept=4, drop_unknown=0, drop_old=2, drop_future=0, window=[2026-08-03,2026-08-06]
+2026-08-05 20:23:14 | INFO     | src/search_service.py:2804 | [新闻相关度] 600362:SerpAPI:risk_check:rank: direct=0, sector=3, macro=0, top_score=6, top_category=sector_related_news, reasons=仅命中行业或板块背景
+2026-08-05 20:23:14 | INFO     | src/search_service.py:3621 | [情报搜索] 风险排查: 原始=6条, 过滤后=3条
+2026-08-05 20:23:15 | INFO     | src/search_service.py:3582 | [情报搜索] 公司公告: 使用 SearXNG
+2026-08-05 20:23:15 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.rhscz.eu 搜索失败: Too Many Requests
+2026-08-05 20:23:16 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searxng.site 搜索失败: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Ap；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-08-05 20:23:16 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.tiekoetter.com 搜索失败: Too Many Requests
+2026-08-05 20:23:16 | WARNING  | src/search_service.py:3628 | [情报搜索] 公司公告: 搜索失败 - https://searx.rhscz.eu: Too Many Requests；https://searxng.site: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Ap；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问；https://searx.tiekoetter.com: Too Many Requests
+2026-08-05 20:23:17 | INFO     | src/search_service.py:3582 | [情报搜索] 业绩预期: 使用 SerpAPI
+2026-08-05 20:23:21 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '江西铜业 业绩预告 财报 营收 净利润 同比增长' 成功，返回 6 条结果，耗时 4.57s
+2026-08-05 20:23:21 | INFO     | src/search_service.py:2804 | [新闻相关度] 600362:SerpAPI:earnings:rank: direct=2, sector=1, macro=0, top_score=100, top_category=direct_company_news, reasons=标题命中股票代码 600362；标题命中公司名 江西铜业；命中公告/财报/交易等公司事件词
+2026-08-05 20:23:21 | INFO     | src/search_service.py:3621 | [情报搜索] 业绩预期: 原始=6条, 过滤后=3条
+2026-08-05 20:23:22 | INFO     | src/core/pipeline.py:448 | 江西铜业(600362) 情报搜索完成: 共 9 条结果
+2026-08-05 20:23:22 | INFO     | src/storage.py:1203 | 保存新闻情报成功: 600362, 新增 3 条
+2026-08-05 20:23:22 | INFO     | src/storage.py:1203 | 保存新闻情报成功: 600362, 新增 3 条
+2026-08-05 20:23:22 | INFO     | src/storage.py:1203 | 保存新闻情报成功: 600362, 新增 3 条
+2026-08-05 20:23:22 | INFO     | src/agent/skills/base.py:360 | Loaded 15 built-in skills from /home/runner/work/daily_stock_analysis/daily_stock_analysis/strategies
+2026-08-05 20:23:22 | INFO     | src/agent/factory.py:236 | [AgentFactory] SkillManager prototype cached (15 skills)
+2026-08-05 20:23:22 | INFO     | src/agent/skills/base.py:431 | Activated skills: ['bull_trend']
+2026-08-05 20:23:22 | INFO     | src/agent/factory.py:280 | [AgentFactory] Activated skills: ['bull_trend']
+2026-08-05 20:23:25 | INFO     | src/analyzer.py:2583 | ========== AI 分析 江西铜业(600362) ==========
+2026-08-05 20:23:25 | INFO     | src/analyzer.py:2584 | [LLM配置] 模型: deepseek/deepseek-chat
+2026-08-05 20:23:25 | INFO     | src/analyzer.py:2585 | [LLM配置] Prompt 长度: 5304 字符
+2026-08-05 20:23:25 | INFO     | src/analyzer.py:2586 | [LLM配置] 是否包含新闻: 是
+2026-08-05 20:23:25 | INFO     | src/analyzer.py:2590 | [LLM Prompt 预览]
+# 决策仪表盘分析请求
+
+## 📊 股票基础信息
+| 项目 | 数据 |
+|------|------|
+| 股票代码 | **600362** |
+| 股票名称 | **江西铜业** |
+| 分析日期 | 2026-08-06 |
+
+---
+
+## 市场阶段上下文
+- 当前市场阶段：盘前
+- 市场：cn
+- 市场本地时间：2026-08-06T04:22:18.600227+08:00
+- 最新可复用完整日线日期：2026-08-05
+- 距常规开盘约 307 分钟。
+- 阶段约束：当前尚未开盘，不得描述“今日走势已经发生”；只能基于上一完整交易日（2026-08-05）和盘前信息生成开盘计划、观察价位与风险预案。
+
+
+## 📈 技术面数据
+
+### 今日行情
+| 指标 | 数值 |
+|------|------|
+| 收盘价 | {today.get('close', 'N/A')} 元 |
+| 开盘价 | {today.get('open', 'N/A')} 元 |
+| 最高价 | {today.get('high', 'N/A')} 元 |
+| 最低价 | {today.get...
+2026-08-05 20:23:25 | INFO     | src/analyzer.py:2599 | [LLM调用] 开始调用 deepseek/deepseek-chat...
+2026-08-05 20:24:36 | WARNING  | src/analyzer.py:2415 | [LiteLLM] deepseek/deepseek-chat stream unavailable before first chunk, falling back to non-stream: deepseek/deepseek-chat stream returned empty response
+2026-08-05 20:25:49 | WARNING  | src/analyzer.py:2462 | [LiteLLM] deepseek/deepseek-chat failed: LLM returned empty response
+2026-08-05 20:25:49 | ERROR    | src/analyzer.py:2693 | AI 分析 江西铜业(600362) 失败: All LLM models failed (tried 1 model(s)). Last error: LLM returned empty response
+2026-08-05 20:25:49 | INFO     | src/analyzer.py:745 | [price_position] Filled placeholder fields from computed data
+2026-08-05 20:25:49 | WARNING  | src/core/pipeline.py:1948 | [600362] 分析未成功: All LLM models failed (tried 1 model(s)). Last error: LLM returned empty response
+2026-08-05 20:25:49 | WARNING  | src/core/pipeline.py:2069 | [600362] 分析结果标记为失败，不计入汇总: All LLM models failed (tried 1 model(s)). Last error: LLM returned empty response
+2026-08-05 20:25:49 | INFO     | src/core/pipeline.py:2107 | ===== 分析完成 =====
+2026-08-05 20:25:49 | INFO     | src/core/pipeline.py:2108 | 成功: 0, 失败: 1, 耗时: 211.15 秒
+2026-08-05 20:25:49 | INFO     | src/core/market_review.py:102 | 开始执行大盘复盘分析...
+2026-08-05 20:25:49 | INFO     | data_provider/base.py:1118 | 已初始化 5 个数据源（按优先级）: EfinanceFetcher(P0), AkshareFetcher(P1), PytdxFetcher(P2), BaostockFetcher(P3), YfinanceFetcher(P4)
+2026-08-05 20:25:49 | INFO     | src/market_analyzer.py:1239 | ========== 开始大盘复盘分析 ==========
+2026-08-05 20:25:49 | INFO     | src/market_analyzer.py:330 | [大盘] 获取主要指数实时行情...
+2026-08-05 20:25:51 | INFO     | data_provider/efinance_fetcher.py:826 | [API调用] ef.stock.get_realtime_quotes(['沪深系列指数']) 获取指数行情...
+2026-08-05 20:25:52 | ERROR    | data_provider/efinance_fetcher.py:887 | [efinance] 获取指数行情失败: Expecting value: line 1 column 1 (char 0)
+2026-08-05 20:26:04 | INFO     | data_provider/base.py:2024 | [AkshareFetcher] 获取指数行情成功
+2026-08-05 20:26:04 | INFO     | src/market_analyzer.py:356 | [大盘] 获取到 6 个指数行情
+2026-08-05 20:26:04 | INFO     | src/market_analyzer.py:366 | [大盘] 获取市场涨跌统计...
+2026-08-05 20:26:06 | INFO     | data_provider/efinance_fetcher.py:907 | [API调用] ef.stock.get_realtime_quotes() 获取市场统计...
+2026-08-05 20:26:06 | ERROR    | data_provider/efinance_fetcher.py:918 | [efinance] 获取市场统计失败: Expecting value: line 1 column 1 (char 0)
+2026-08-05 20:26:11 | INFO     | data_provider/akshare_fetcher.py:1690 | [API调用] ak.stock_zh_a_spot_em() 获取市场统计...
+2026-08-05 20:26:19 | WARNING  | data_provider/akshare_fetcher.py:1695 | [Akshare] 东财接口获取市场统计失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))，尝试新浪接口
+2026-08-05 20:26:22 | INFO     | data_provider/akshare_fetcher.py:1702 | [API调用] ak.stock_zh_a_spot() 获取市场统计(新浪)...
+2026-08-05 20:27:12 | INFO     | data_provider/base.py:2047 | [AkshareFetcher] 获取市场统计成功
+2026-08-05 20:27:12 | INFO     | src/market_analyzer.py:378 | [大盘] 涨:3725 跌:1620 平:186 涨停:103 跌停:1 成交额:26795亿
+2026-08-05 20:27:12 | INFO     | src/market_analyzer.py:388 | [大盘] 获取板块涨跌榜...
+2026-08-05 20:27:15 | INFO     | data_provider/efinance_fetcher.py:1020 | [API调用] ef.stock.get_realtime_quotes(['行业板块']) 获取板块行情...
+2026-08-05 20:27:16 | ERROR    | data_provider/efinance_fetcher.py:1046 | [efinance] 获取板块排行失败: Expecting value: line 1 column 1 (char 0)
+2026-08-05 20:27:18 | INFO     | data_provider/akshare_fetcher.py:1833 | [API调用] ak.stock_board_industry_name_em() 获取板块排行...
+2026-08-05 20:27:25 | WARNING  | data_provider/akshare_fetcher.py:1841 | [Akshare] 东财接口获取行业板块排行失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))，尝试新浪接口
+2026-08-05 20:27:29 | INFO     | data_provider/akshare_fetcher.py:1848 | [API调用] ak.stock_sector_spot() 获取行业板块排行(新浪)...
+2026-08-05 20:27:29 | INFO     | data_provider/base.py:3026 | [AkshareFetcher] 获取板块排行成功
+2026-08-05 20:27:29 | INFO     | src/market_analyzer.py:396 | [大盘] 领涨板块: ['建筑安装业', '有色金属矿采选业', '仪器仪表制造业', '金属制品业', '非金属矿物制品业']
+2026-08-05 20:27:29 | INFO     | src/market_analyzer.py:397 | [大盘] 领跌板块: ['酒、饮料和精制茶制造业', '石油和天然气开采业', '货币金融服务', '铁路运输业', '电信、广播电视和卫星传输服务']
+2026-08-05 20:27:29 | INFO     | src/market_analyzer.py:440 | [大盘] 开始搜索市场新闻...
+2026-08-05 20:27:29 | INFO     | src/search_service.py:3192 | 搜索股票新闻: 大盘(market), query='A股 大盘 复盘', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-08-05 20:27:31 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 'A股 大盘 复盘' 成功，返回 6 条结果，耗时 1.89s
+2026-08-05 20:27:31 | INFO     | src/search_service.py:3067 | [新闻过滤] market:SerpAPI:stock_news: provider=SerpAPI, total=6, kept=2, drop_unknown=0, drop_old=4, drop_future=0, window=[2026-08-03,2026-08-06]
+2026-08-05 20:27:31 | INFO     | src/search_service.py:2804 | [新闻相关度] market:SerpAPI:stock_news: direct=1, sector=1, macro=0, top_score=40, top_category=direct_company_news, reasons=摘要命中公司名 大盘；命中公告/财报/交易等公司事件词
+2026-08-05 20:27:31 | INFO     | src/search_service.py:3294 | SerpAPI 搜索成功，识别到 1 条直接个股新闻，优先返回
+2026-08-05 20:27:31 | INFO     | src/market_analyzer.py:454 | [大盘] 搜索 'A股 大盘 复盘' 获取 2 条结果
+2026-08-05 20:27:31 | INFO     | src/search_service.py:3192 | 搜索股票新闻: 大盘(market), query='股市 行情 分析', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-08-05 20:27:44 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 '股市 行情 分析' 成功，返回 6 条结果，耗时 12.67s
+2026-08-05 20:27:44 | INFO     | src/search_service.py:3067 | [新闻过滤] market:SerpAPI:stock_news: provider=SerpAPI, total=6, kept=5, drop_unknown=0, drop_old=1, drop_future=0, window=[2026-08-03,2026-08-06]
+2026-08-05 20:27:44 | INFO     | src/search_service.py:2804 | [新闻相关度] market:SerpAPI:stock_news: direct=1, sector=1, macro=3, top_score=57, top_category=direct_company_news, reasons=标题命中公司名 大盘；命中公告/财报/交易等公司事件词
+2026-08-05 20:27:44 | INFO     | src/search_service.py:3294 | SerpAPI 搜索成功，识别到 1 条直接个股新闻，优先返回
+2026-08-05 20:27:44 | INFO     | src/market_analyzer.py:454 | [大盘] 搜索 '股市 行情 分析' 获取 3 条结果
+2026-08-05 20:27:44 | INFO     | src/search_service.py:3192 | 搜索股票新闻: 大盘(market), query='A股 市场 热点 板块', 时间范围: 近3天 (profile=short, NEWS_MAX_AGE_DAYS=3, prefer_chinese=True), 目标条数=3, provider请求条数=6
+2026-08-05 20:28:01 | INFO     | src/search_service.py:252 | [SerpAPI] 搜索 'A股 市场 热点 板块' 成功，返回 6 条结果，耗时 17.53s
+2026-08-05 20:28:01 | INFO     | src/search_service.py:2804 | [新闻相关度] market:SerpAPI:stock_news: direct=0, sector=1, macro=5, top_score=6, top_category=sector_related_news, reasons=仅命中行业或板块背景
+2026-08-05 20:28:01 | INFO     | src/search_service.py:3311 | SerpAPI 搜索成功，中文结果已满足目标条数但缺少直接个股命中，继续尝试下一引擎
+2026-08-05 20:28:02 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searxng.site 搜索失败: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Ap；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-08-05 20:28:02 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.tiekoetter.com 搜索失败: Too Many Requests
+2026-08-05 20:28:03 | WARNING  | src/search_service.py:2083 | [SearXNG] 实例 https://searx.linxx.net 搜索失败: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问
+2026-08-05 20:28:03 | WARNING  | src/search_service.py:3336 | SearXNG 搜索失败: https://searxng.site: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Ap；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问；https://searx.tiekoetter.com: Too Many Requests；https://searx.linxx.net: Forbidden: browser verification required；SearXNG 实例可能未启用 JSON 输出（请检查 settings.yml），或实例/代理拒绝了本次访问，尝试下一个引擎
+2026-08-05 20:28:03 | INFO     | src/market_analyzer.py:454 | [大盘] 搜索 'A股 市场 热点 板块' 获取 3 条结果
+2026-08-05 20:28:03 | INFO     | src/market_analyzer.py:456 | [大盘] 共获取 8 条市场新闻
+2026-08-05 20:28:03 | INFO     | src/market_analyzer.py:481 | [大盘] 调用大模型生成复盘报告...
+2026-08-05 20:28:20 | INFO     | src/market_analyzer.py:486 | [大盘] 复盘报告生成成功，长度: 2058 字符
+2026-08-05 20:28:20 | INFO     | src/market_analyzer.py:1251 | ========== 大盘复盘分析完成 ==========
+2026-08-05 20:28:20 | INFO     | src/notification.py:2322 | 日报已保存到: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/market_review_20260805.md
+2026-08-05 20:28:20 | INFO     | src/core/market_review.py:153 | 大盘复盘报告已保存: /home/runner/work/daily_stock_analysis/daily_stock_analysis/reports/market_review_20260805.md
+2026-08-05 20:28:20 | INFO     | src/core/market_review.py:242 | 大盘复盘历史记录已保存: query_id=market_review_a73360790c2842278b25f276ea08d6c3
+2026-08-05 20:28:20 | INFO     | src/notification.py:2197 | 正在向 1 个渠道发送通知：飞书
+2026-08-05 20:28:21 | INFO     | src/notification_sender/feishu_sender.py:215 | 飞书消息发送成功
+2026-08-05 20:28:21 | INFO     | src/notification.py:2244 | 通知发送完成：成功 1 个，失败 0 个
+2026-08-05 20:28:21 | INFO     | src/core/market_review.py:173 | 大盘复盘推送成功
+2026-08-05 20:28:21 | INFO     | main.py:579 | 
+任务执行完成
+2026-08-05 20:28:22 | INFO     | main.py:628 | 开始自动回测...
+2026-08-05 20:28:22 | INFO     | main.py:636 | 自动回测完成: processed=0 saved=0 completed=0 insufficient=0 errors=0
+2026-08-05 20:28:22 | INFO     | main.py:973 | 
+程序执行完成
