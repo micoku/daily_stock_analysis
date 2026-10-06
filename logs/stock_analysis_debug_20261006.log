@@ -40,3 +40,45 @@
 2026-10-06 00:32:13 | INFO     | main.py:476 | 今日所有相关市场均为非交易日，跳过执行。可使用 --force-run 强制执行。
 2026-10-06 00:32:13 | INFO     | main.py:973 | 
 程序执行完成
+2026-10-06 22:51:59 | INFO     | src/logging_config.py:188 | 日志系统初始化完成，日志目录: logs
+2026-10-06 22:51:59 | INFO     | src/logging_config.py:189 | 常规日志: logs/stock_analysis_20261006.log
+2026-10-06 22:51:59 | INFO     | src/logging_config.py:190 | 调试日志: logs/stock_analysis_debug_20261006.log
+2026-10-06 22:51:59 | INFO     | main.py:791 | ============================================================
+2026-10-06 22:51:59 | INFO     | main.py:792 | A股自选股智能分析系统 启动
+2026-10-06 22:51:59 | INFO     | main.py:793 | 运行时间: 2026-10-06 22:51:59
+2026-10-06 22:51:59 | INFO     | main.py:794 | ============================================================
+2026-10-06 22:51:59 | WARNING  | main.py:799 | 未配置 Tushare Token，将使用其他数据源
+2026-10-06 22:52:00 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | connect_tcp.started host='raw.githubusercontent.com' port=443 local_address=None timeout=5 socket_options=None
+2026-10-06 22:52:00 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fbca1e40450>
+2026-10-06 22:52:00 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | start_tls.started ssl_context=<ssl.SSLContext object at 0x7fbca1e3c0e0> server_hostname='raw.githubusercontent.com' timeout=5
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fbca1e40410>
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_headers.started request=<Request [b'GET']>
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_headers.complete
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_body.started request=<Request [b'GET']>
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | send_request_body.complete
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_headers.started request=<Request [b'GET']>
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Connection', b'keep-alive'), (b'Content-Length', b'151775'), (b'Cache-Control', b'max-age=300'), (b'Content-Security-Policy', b"default-src 'none'; style-src 'unsafe-inline'; sandbox"), (b'Content-Type', b'text/plain; charset=utf-8'), (b'ETag', b'W/"0ec3436a580cc4acdaf18b09a1c4196e7dfd284a04759721365cec3fd54e8bd5"'), (b'Strict-Transport-Security', b'max-age=31536000'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Frame-Options', b'deny'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-GitHub-Request-Id', b'F2EA:34D150:55A1:256EC:6AC573D8'), (b'x-github-edge-region', b'westus3'), (b'Content-Encoding', b'gzip'), (b'Accept-Ranges', b'bytes'), (b'Date', b'Tue, 06 Oct 2026 22:52:01 GMT'), (b'Via', b'1.1 varnish'), (b'X-Served-By', b'cache-pao-kpao1770022-PAO'), (b'X-Cache', b'HIT'), (b'X-Cache-Hits', b'72'), (b'X-Timer', b'S1791327121.003615,VS0,VE0'), (b'Vary', b'Authorization,Accept-Encoding'), (b'Access-Control-Allow-Origin', b'*'), (b'Cross-Origin-Resource-Policy', b'cross-origin'), (b'X-Fastly-Request-ID', b'cc8302115754a767d13e1156a6ebfceea7ea32c4'), (b'Expires', b'Tue, 06 Oct 2026 22:57:01 GMT'), (b'Source-Age', b'175')])
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_body.started request=<Request [b'GET']>
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | receive_response_body.complete
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | response_closed.started
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | response_closed.complete
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | close.started
+2026-10-06 22:52:01 | DEBUG    | /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/httpcore/_trace.py:47 | close.complete
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: bottom_volume (bottom_volume.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: box_oscillation (box_oscillation.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: bull_trend (bull_trend.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: chan_theory (chan_theory.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: dragon_head (dragon_head.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: emotion_cycle (emotion_cycle.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: event_driven (event_driven.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: expectation_repricing (expectation_repricing.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: growth_quality (growth_quality.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: hot_theme (hot_theme.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: ma_golden_cross (ma_golden_cross.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: one_yang_three_yin (one_yang_three_yin.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: shrink_pullback (shrink_pullback.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: volume_breakout (volume_breakout.yaml)
+2026-10-06 22:52:03 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: wave_theory (wave_theory.yaml)
+2026-10-06 22:52:03 | INFO     | main.py:476 | 今日所有相关市场均为非交易日，跳过执行。可使用 --force-run 强制执行。
+2026-10-06 22:52:03 | INFO     | main.py:973 | 
+程序执行完成
