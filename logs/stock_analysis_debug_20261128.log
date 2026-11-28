@@ -1,0 +1,26 @@
+2026-11-28 01:45:10 | INFO     | src/logging_config.py:188 | 日志系统初始化完成，日志目录: logs
+2026-11-28 01:45:10 | INFO     | src/logging_config.py:189 | 常规日志: logs/stock_analysis_20261128.log
+2026-11-28 01:45:10 | INFO     | src/logging_config.py:190 | 调试日志: logs/stock_analysis_debug_20261128.log
+2026-11-28 01:45:10 | INFO     | main.py:791 | ============================================================
+2026-11-28 01:45:10 | INFO     | main.py:792 | A股自选股智能分析系统 启动
+2026-11-28 01:45:10 | INFO     | main.py:793 | 运行时间: 2026-11-28 01:45:10
+2026-11-28 01:45:10 | INFO     | main.py:794 | ============================================================
+2026-11-28 01:45:10 | WARNING  | main.py:799 | 未配置 Tushare Token，将使用其他数据源
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: bottom_volume (bottom_volume.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: box_oscillation (box_oscillation.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: bull_trend (bull_trend.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: chan_theory (chan_theory.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: dragon_head (dragon_head.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: emotion_cycle (emotion_cycle.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: event_driven (event_driven.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: expectation_repricing (expectation_repricing.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: growth_quality (growth_quality.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: hot_theme (hot_theme.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: ma_golden_cross (ma_golden_cross.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: one_yang_three_yin (one_yang_three_yin.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: shrink_pullback (shrink_pullback.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: volume_breakout (volume_breakout.yaml)
+2026-11-28 01:45:14 | DEBUG    | src/agent/skills/base.py:300 | Loaded skill from YAML: wave_theory (wave_theory.yaml)
+2026-11-28 01:45:14 | INFO     | main.py:476 | 今日所有相关市场均为非交易日，跳过执行。可使用 --force-run 强制执行。
+2026-11-28 01:45:14 | INFO     | main.py:973 | 
+程序执行完成
